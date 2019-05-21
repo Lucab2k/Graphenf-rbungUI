@@ -76,9 +76,13 @@ public class Hauptfenster extends JFrame {
 		setTitle("Graphenfärbung");
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		Object Array[][] = new Object[main.frame.KnotenAnzahl][main.frame.KnotenAnzahl];		
+		//Object Array[][] = new Object[main.frame.KnotenAnzahl][main.frame.KnotenAnzahl];	
 		
-		DefaultTableModel tableModel = new DefaultTableModel(Array, main.frame.KnotenAnzahl);
+		Graph Graph = new Graph(main.frame.KnotenAnzahl);
+		
+		
+		
+		DefaultTableModel tableModel = new DefaultTableModel(Graph.getGraphArray(), main.frame.KnotenAnzahl);
 		
 		table = new JTable(tableModel);
 		
@@ -129,10 +133,10 @@ public class Hauptfenster extends JFrame {
 				DefaultTableModel dtm = (DefaultTableModel) table.getModel();
 			    for (int i = 0 ; i < main.frame.KnotenAnzahl ; i++)
 			        for (int j = 0 ; j < main.frame.KnotenAnzahl ; j++)
-			        	Array[i][j] = dtm.getValueAt(i,j);
+			        	Graph.getGraphArray()[i][j] = dtm.getValueAt(i,j);
 			    
 			    
-			    System.out.println(Arrays.deepToString(Array));
+			    System.out.println(Arrays.deepToString(Graph.getGraphArray()));
 			    //System.out.println(Array[0][0]);
 			}
 			

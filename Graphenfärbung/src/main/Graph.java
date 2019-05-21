@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class Graph {
 	
 	int AnzahlKnoten;
-	Boolean[][] Array;
+	Object[][] Array;
 	Färbungsmöglichkeit Färbungsmöglichkeit;
 	
 	
 	 public Graph(int AnzahlKnoten) {
 		this.AnzahlKnoten = AnzahlKnoten;
-		Array = new Boolean[AnzahlKnoten][AnzahlKnoten];
+		Array = new Object[AnzahlKnoten][AnzahlKnoten];
 	 }
 
 
-	public Boolean[][] getGraphArray() {
+	public Object[][] getGraphArray() {
 		return Array;
 	}
 	 
